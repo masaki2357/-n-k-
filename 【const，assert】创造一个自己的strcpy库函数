@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <assert.h>
+char* My_Strcpy(char* dest, const char* src)//返回的是指针，代表数组的首地址
+
+//const 修饰 src,使其不可修改
+{
+	char *ret = dest;
+	assert(dest != NULL);//用assert检查指针是否为空，更安全
+	assert(src != NULL);
+	while (*dest++ = *src++)//当*src为0是，停止循环
+	{
+		;
+	}
+	
+	return ret;
+
+}
+
+int main()
+{
+	char arr1[] = "########";
+	char arr2[] = "shit";
+	printf("%s\n", My_Strcpy(arr1, arr2));
+	return 0;
+}
