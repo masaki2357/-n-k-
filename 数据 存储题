@@ -1,0 +1,16 @@
+#include <stdio.h>
+int main()
+{
+	char a[1000];
+//char 类型中 整数的存储范围是-128~~127
+	int i = 0;
+	for(i = 0; i < 1000; i++)
+	{
+		 a[i] = -1 - i;
+	}
+	//char a内部存储 -1 -2 -3.。。。-128 127 126 .。。 2 1 0；
+	///0为strlen函数结束的判定标志
+	//因为/0的ascall码值为 0 ，
+	printf("%d", strlen(a));
+	return 0;
+}
