@@ -1,0 +1,9 @@
+#include <stdio.h>
+int main()
+{
+	int a = -20;
+	unsigned int b = 10;
+	printf("%d", a + b);
+	//按补码的格式运算，结果转化为有符号整数。
+	return 0;
+}
