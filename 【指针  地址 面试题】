@@ -1,0 +1,29 @@
+#include <stdio.h>
+int main()
+{
+	char arr1[] = "abcdef";
+	char arr2[] = "abcdef";
+	char* p1 = "abcdef";
+	char* p2 = "abcdef";
+	if (arr1 == arr2)
+	{
+		printf("haha\n");
+	}
+	else
+	{
+		printf("hehe\n");
+	}
+
+	if (p1 == p2)
+	{
+		printf("haha\n");
+	}
+	else
+	{
+		printf("hehe\n");
+	}
+	return 0;
+}
+
+//两个数组存放的不是一个地址，
+//两个常量相等，在内存中是一个地址
