@@ -1,0 +1,23 @@
+//假设p的值为0x100000，如下表达式的值分别是多少？
+//已经知道结构体Test类型的变量大小是20个字节
+
+
+#include <stdio.h>
+
+
+
+struct Test
+{
+	int Mun;
+	char *pcaname;
+	short sDate;
+	char cha[2];
+	short sBa[4];
+} *p;
+int main()
+{
+	p = (struct Test*)0x100000;
+	printf("%p\n", p + 0x1);
+	printf("%p\n", (unsigned long)p + 0x1);
+	printf("%p\n", (unsigned int*)p + 0x1);
+}
