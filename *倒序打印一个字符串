@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include <string.h>
+#include <assert.h>
 
 void  Reverse(char *str)
 {
+ 	assert(str);
 	int len = strlen(str);
 
 	
