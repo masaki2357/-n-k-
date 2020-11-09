@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <string.h>
+
+void  Reverse(char *str)
+{
+	int len = strlen(str);
+
+	
+
+		char* left = str;
+		char * right = str + len - 1;
+
+		while (left < right)
+
+		{
+			char temp = *left;
+		*left = *right;
+		*right = temp;
+		left++;
+		right--;
+	}
+		return 0;
+}
+
+
+int main()
+{
+	char arr[231] = { 0 };
+	scanf("%s",arr);
+	Reverse(arr);
+	printf("%s\n", arr);
+	return 0;
+}
