@@ -28,7 +28,7 @@ void  Reverse(char *str)
 int main()
 {
 	char arr[231] = { 0 };
-	scanf("%s",arr);
+	gets(arr);
 	Reverse(arr);
 	printf("%s\n", arr);
 	return 0;
