@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <assert.h>
+//1:计数器法实现 my_strlen
+//int my_strlen(const char *str)//my_strlen返回值应为size_t(unsigned int)
+//{
+//	assert(str!=NULL);
+//	int count = 0;
+//	int i = 0;
+//	while (*str != '\0')//也可以写为while(*str)
+//	{
+//		count++;
+//		str++;
+//	}
+//	return count;
+//}
+//2:用递归实现my_strlen
+size_t my_strlen(const char* str)
+{
+	if (*str == '\0')
+	{
+		return 0;
+	}
+	else
+	{
+		str++;
+		return my_strlen(str) + 1;
+	}
+	
+}
+
+int main()
+{
+	char arr[] = "hello bit";
+	int len = my_strlen(arr);
+	printf("%d", len);
+	return 0;
+}
