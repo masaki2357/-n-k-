@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<assert.h>
+
+char* my_strcat(char * p1, const char * p2)
+{
+	char* ret = p1;//保留初始指针位置
+	assert(p1 != NULL);
+	assert(p2);
+	while (*p1 != '\0')
+	{
+		p1++;
+	}
+
+	while (*p1++ = *p2++)
+	{
+		;
+	}
+	return ret;
+}
+
+int main()
+{
+	char arr1[20] = "hello";
+	char arr2[] = "bit";
+	my_strcat(arr1, arr2);
+	printf("%s\n", arr1);
+	return 0;
+}
