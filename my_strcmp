@@ -13,6 +13,7 @@ int my_strcmp(const char * str1,const char *str2)
 		str1++;
 		str2++;
 	}
+	//以下语句也可写为 return（*str1=*str2）；
 	if (*str1 > *str2)//大于
 	{
 		return 1;
