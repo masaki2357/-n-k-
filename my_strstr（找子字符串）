@@ -6,7 +6,7 @@ char* my_strstr(const char * p1, const char * p2)
 	assert(p2 != NULL);
 	char *s1 = NULL;
 	char *s2 = NULL;
-	char *cur = p1;//另设一个指针指向p1
+	char *cur = (char*)p1;//另设一个指针指向p1
 
 	if (*p2 == '\0')//判断p2是否为空；
 	{
@@ -15,7 +15,7 @@ char* my_strstr(const char * p1, const char * p2)
 	while (*cur)//开始循环判断
 	{
 		s1 = cur;
-		s2 = p2;
+		s2 = (char*)p2;
 		while ((s1 != '\0') && (*s2 != '\0') && (*s1 == *s2))//若两指针解引用相同则++
 		{
 			s1++;
