@@ -1,0 +1,20 @@
+#include <stdio.h>
+char *GetMemory(void)
+{
+	 char p[] = "hello world";//栈区
+	//若 static char p[]则p在静态区，代码正确
+	return p;
+}
+
+void Test(void)
+{
+	char *str = NULL;
+	str = GetMemory();//返回栈空间的问题，数组p只在函数Test内有效
+	printf(str);
+}
+
+int main()
+{
+	Test();
+	return 0;
+}
