@@ -1,0 +1,56 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+//void GetMemory(char *p)
+//{
+//	p = (char *)malloc(100);//存在内存泄漏问题
+//}
+//
+//void Test(void)
+//{
+//	char *str = NULL;
+//	GetMemory(str);
+//	strcpy(str, "hello word");
+//	printf(str);
+//}
+////str以值传递的形式给p
+////p是GetMemory函数的形参，只能函数内部有效
+////等GetMemory 函数返回之后，动态开辟内存尚未释放并且无法找到，所以会造成内存泄漏
+//
+////改正1
+//void GetMemory(char **p)
+//{
+//
+//	*p = (char *)malloc(100);
+//}
+//
+//void Test(void)
+//{
+//	char *str = NULL;
+//	GetMemory(&str);
+//	strcpy(str, "hello word");
+//	printf(str);
+//}
+//int main()
+//{
+//	Test();
+//}
+//改正2
+char*  GetMemory(char *p)
+{
+	p = (char *)malloc(100);//存在内存泄漏问题
+	return p;
+}
+
+void Test(void)
+{
+	char *str = NULL;
+	str=GetMemory(str);
+	strcpy(str, "hello word");
+	printf(str);
+}
+int main()
+{
+	Test();
+}
