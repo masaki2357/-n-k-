@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+struct S
+{
+	int a;
+	float b;
+	char arr[10];
+};
+
+int main()
+{
+	struct S s = { 100, 3.14f, "zch" };
+	FILE* pf = fopen("test.txt", "w");
+	if (pf == NULL)
+	{
+		return 0;
+	}
+	//按格式写入文件
+	fprintf(pf, "%d,%f,%s", s.a, s.b, s.arr);
+	fclose(pf);
+	pf = NULL;
+	return 0;
+}
