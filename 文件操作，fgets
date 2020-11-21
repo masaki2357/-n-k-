@@ -1,0 +1,21 @@
+#include <stdio.h>
+int main()
+{
+	char arr[1024] = { 0 };
+
+	FILE* pf = fopen("test.txt", "r");
+
+	if (pf == NULL)
+	{
+		return 0;
+	}
+
+	//读文件
+	fgets(arr, 1024, pf);
+	printf("%s", arr);
+
+	fclose(pf);
+	pf = NULL;
+
+	return 0;
+}
