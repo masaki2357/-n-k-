@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <string.h>
+#include <errno.h>
+int main()
+{
+	//相对路径
+	//fopen("test.txt", "w");
+	//绝对路径
+	//fopen("D:\\OneDrive\\文档\\Visual Studio 2013\\Projects\\test 10_20\\test 10_20", "w");
+	FILE* pf = fopen("test.txt", "w");
+	if (pf == NULL)
+	{
+		printf("%s\n", strerror(errno));
+		return 0;
+	}
+	//打开文件
+	//写文件
+	fputc('b', pf); fputc('i', pf); fputc('t', pf);
+	
+	//关闭文件
+	fclose(pf);
+	pf = NULL;
+	return 0;
+}
