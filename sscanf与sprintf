@@ -1,0 +1,25 @@
+#include <stdio.h>
+struct S
+{
+	int a;
+	float sorce;
+	char arr[1024];
+};
+
+
+int main()
+{
+	struct S s = { 100, 3.14f, "sadf" };
+	struct S gg = { 0 };
+	char buff[1024] = { 0 };
+	//把格式化的数据转换成字符串数据
+	sprintf(buff, "%d, %f, %s", s.a, s.sorce, s.arr);
+	/*printf("%s\n", buff);*/
+	
+	//从buff中读取格式化的数据到gg中
+	sscanf(buff, "%d, %f, %s", &(gg.a), &(gg.sorce), &(gg.arr));
+	
+	printf("%d, %f, %s", gg.a, gg.sorce, gg.arr);
+
+	return 0;
+}
