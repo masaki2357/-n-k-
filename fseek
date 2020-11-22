@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <string.h>
+#include <errno.h>
+int main()
+{
+	FILE* pf = fopen("test.txt", "r");
+	if (pf == NULL)
+	{
+		printf("%s", strerror(errno));
+	}
+	//定文件指针
+	fseek(pf, 2, SEEK_CUR);    //SEEK_CUR文件指针的当前位置SEEK_END 文件的末尾位置SEEK_SET文件的起始位置
+	//读取文件
+	int ch = fgetc(pf);
+	printf("%c\n", ch);
+
+	fclose(pf);
+	pf = NULL;
+	return 0;
+}
