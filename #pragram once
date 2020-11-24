@@ -1,0 +1,8 @@
+//防止头文件被多次引用
+#ifndef  __TEST_H__
+#define __TEST_H__//#pragram once
+
+int Add(int x, int y);
+#endif
+
+
